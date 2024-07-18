@@ -64,6 +64,7 @@ public class LoanAccountService {
 	public LoanAccount createLoanAccount(LoanAccount loanAcc, int user_id) {
 		SavingAccount userAccount = savingAccRepo.findByAccountno(loanAcc.getAccountNo());
 		logger.info("createLoanAccount service "+loanAcc.getAccountNo());
+		logger.info("account created successfully");
 		loanAcc.setAccountNo(userAccount.getAccountno());
 		loanAcc.setStatus("Approved");
 		loanAcc = loanAccrepo.save(loanAcc);
